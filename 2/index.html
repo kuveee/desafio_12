@@ -1,0 +1,50 @@
+<!-- Crear una galería de imágenes
+
+Todas las imágenes deben estar desaturada (en blanco y negro)
+ver: https://stackoverflow.com/questions/22994810/how-do-i-desaturate-and-saturate-an-image-using-css
+
+Al hacer click sobre la imágen esta debe recuperar su color con una transición
+de un segundo, al volver hacer click debe volver a estar en blanco y negro.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>primer jquery</title>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js">
+	</script>
+	<style>
+	img{
+		transition: 1s;
+	}
+		
+	.blancoynegro {
+   
+    -webkit-filter: grayscale(100%);
+    -moz-filter:    grayscale(100%);
+    -ms-filter:     grayscale(100%);
+    -o-filter:      grayscale(100%);
+    filter: gray; 
+	}
+
+	</style>
+</head>
+<body>
+
+	<img src="https://imagizer.imageshack.us/v2/350x496q90/822/z7ds.jpg" />
+	<script>
+	
+	// hace que ocurra el evento y se elimine, ocurra y se elimine.
+	$(function(){
+		$("img").on("click", function(){
+		$("img").toggleClass("blancoynegro")
+
+		});
+	});
+
+	
+</script>
+	
+</body>
+</html>
